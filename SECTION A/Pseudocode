@@ -1,1 +1,169 @@
+START
+
+WHILE True DO
+  DISPLAY PhoneBookMenu
+  
+FUNCTION PhoneBookMENU() 
+  IF ButtonClicked == Add THEN
+    CALL AddContact()
+  
+  ELSE IF ButtonClicked == Search THEN
+    CALL SearchContact()
+
+  ELSE IF ButtonClicked == Display THEN
+    CALL DisplayAllContacts()
+
+  ELSE IF ButtonClicked == Delete THEN
+    CALL DeleteContact()
+
+  ELSE IF ButtonClicked == Update THEN
+    CALL UpdateContact()
+
+  ELSE IF cButtonClicked == Sort THEN
+    CALL SortContacts()
+    
+  ELSE
+    RETURN PhoneBookMENU
+  END IF
+  END IF
+  END IF
+  END IF
+  END IF
+  END IF
+
+END WHILE
+END
+
+
+FUNCTION AddContact()
+  PROMPT for Name and Phone Number
+  GET name, phone
+
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+
+  IF AddContactButtonClicked THEN
+    IF NameOrNumberAlreadyExists(name, phone) THEN
+      DISPLAY "Name already exists"
+    ELSE
+      ADD contact to phonebook (name, phone)
+      DISPLAY "Name added successfully"
+    END IF
+  END IF
+
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+END FUNCTION
+
+
+FUNCTION SearchContact()
+  PROMPT for Name or Phone Number
+  GET name or  phone
+
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+
+  IF SearchButtonClicked THEN
+    IF NameOrNumberExists(name, phone) THEN
+      DISPLAY "Contact Found: " + name + ", " + phone
+    ELSE
+      DISPLAY "Contact not found"
+    END IF
+  END IF
+
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+END FUNCTION
+
+
+FUNCTION DisplayContacts()
+  
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+
+  
+  FOR EACH contact IN Phonebook DO
+    DISPLAY contact.name + ", " + contact.phone
+  END FOR
+  END IF
+
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+
+END FUNCTION
+
+FUNCTION DeleteContact()
+  PROMPT for Name
+  GET name
+
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+
+  IF DeleteButtonClicked THEN
+    IF NameExists(name) THEN
+      DELETE contact from phonebook
+      DISPLAY  "Successful deleted ."
+    ELSE
+      DISPLAY "Invalid Name"
+    END IF
+  END IF
+
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+
+END FUNCTION
+
+FUNCTION UpdateContact()
+  PROMPT for Name of contact to update
+  GET name
+
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+
+  IF UpdateButtonClicked THEN
+    IF NameExists(name) THEN
+      PROMPT for new Name and Phone Number
+      GET newName and newPhone
+      UPDATE contact in phonebook with (name, newPhone)
+      DISPLAY "Successful updated "
+    ELSE
+      DISPLAY "Invalid Name"
+    END IF
+  END IF
+
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+END FUNCTION
+
+
+
+
+FUNCTION SortContacts()
+  DISPLAY contacts
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+
+  IF ButtonAZClicked THEN
+    SORT phonebook in alphabetical order (A-Z)
+  ELSE
+    IF ButtonAZClicked THEN
+       SORT phonebook in alphabetical order (Z-A)
+
+  IF ExitButtonClicked THEN
+    RETURN PhoneBookMENU
+  END IF
+END FUNCTION
+
+
 
