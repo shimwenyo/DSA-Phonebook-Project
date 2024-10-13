@@ -1,0 +1,43 @@
+To stert the program 
+Run Main.java
+
+
+This will take you to the PhoneBookMenuGUI.java Which will display
+
+1.Add (To add new  contact)
+2.Search (To Search for a contact )
+3.Delete (To delete a  contact )
+4.Display (To Dsplay all contacts )
+5.Update (To Update a contact )
+6.Sort (To Sort for contacts )
+
+When you click 
+Add 
+    You will go the AddContactGUI.java
+    You need to enter Name and cellphone number 
+    You can click Exit button to return back to the PhoneBookMenuGUI.java
+Search 
+    You will go the SearchContactGUI.java
+    You need to enter Name Or  cellphone number that exist so you cant get the contact youre looking for
+    You can click Exit button to return back to the PhoneBookMenuGUI.java 
+
+Delete 
+    You will go the DeleteContactGUI.java
+    You need to enter Name  of contact you want to delete 
+    You can click Exit button to return back to the PhoneBookMenuGUI.java
+
+Display 
+    You will go the DisplayContactGUI.java
+    it will display all contact in the phone 
+    You can click Exit button to return back to the PhoneBookMenuGUI.java
+
+Update 
+    You will go the UpdateContactGUI.java
+    You need to enter Name  of contact you want to update 
+    Also their new name and Phone number you want to update them to 
+    You can click Exit button to return back to the PhoneBookMenuGUI.java
+
+Sort 
+    You will go the SortContactGUI.java
+    It Click either A-Z or Z-A what ever order you want the Contacts to be arraged 
+    You can click Exit button to return back to the PhoneBookMenuGUI.java
